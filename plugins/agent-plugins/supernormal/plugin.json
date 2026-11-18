@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "supernormal",
+  "version": "0.5.0",
+  "description": "Your Supernormal Rooms in your AI agent: wiki, documents, databases, chat, tasks and connected apps.",
+  "author": { "name": "Supernormal Technologies, Inc", "url": "https://supernormal.com" },
+  "homepage": "https://supernormal.com",
+  "repository": "https://github.com/SupernormalCo/agent-plugins",
+  "license": "MIT",
+  "keywords": ["supernormal", "meetings", "tasks", "wiki"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Supernormal",
+        "shortDescription": "Your team's Rooms, in chat",
+        "longDescription": "Supernormal Rooms are shared workspaces for a team: conversation, files, a wiki, databases such as issue trackers, and each member's own notes, meetings and task board. This plugin lets you work in your Rooms from chat.\n\nWhat you can do:\n- Catch up on a Room: recent chat, documents, meeting notes, goals and what changed.\n- Find what was decided or said about something, across every Room you can see.\n- Draft, edit, rename and move documents and wiki pages in a Room.\n- Read and update a Room's issue trackers and boards: file, triage and summarize issues.\n- Work through tasks on your task board, report back on them and create new ones.\n\nWho it's for: teams that use Supernormal for meetings and shared work. You need a Supernormal account; you sign in once, and the plugin acts as you and sees only the Rooms you can see.\n\nLimits: it reads Room chat, comment threads and goals but never posts, replies, reacts or changes a goal. It changes documents, databases and tasks only when you ask.",
+        "developerName": "Supernormal Technologies, Inc",
+        "category": "Productivity",
+        "websiteURL": "https://www.supernormal.com",
+        "supportURL": "https://www.supernormal.com/contact-us",
+        "privacyPolicyURL": "https://www.supernormal.com/privacy-policy",
+        "termsOfServiceURL": "https://www.supernormal.com/terms",
+        "defaultPrompt": [
+          "Catch me up on what happened in my Supernormal Rooms this week",
+          "What did we decide in my most recent meetings?",
+          "Draft a project plan in our team Room from today's discussion"
+        ],
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      }
+    }
+  }
+}

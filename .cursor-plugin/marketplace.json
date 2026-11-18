@@ -1,0 +1,16 @@
+{
+  "name": "supernormal",
+  "owner": {
+    "name": "Supernormal"
+  },
+  "metadata": {
+    "description": "Supernormal for Claude, Cursor and other AI agents: your Rooms' wiki, documents, databases, chat, tasks and connected apps."
+  },
+  "plugins": [
+    {
+      "name": "supernormal",
+      "description": "Your Supernormal Rooms in your AI agent: wiki, documents, databases, chat, tasks and connected apps.",
+      "source": "plugins/cursor/supernormal"
+    }
+  ]
+}
