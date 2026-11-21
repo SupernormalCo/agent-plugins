@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "supernormal",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Your Supernormal Rooms in your AI agent: wiki, documents, databases, chat, tasks and connected apps.",
   "author": { "name": "Supernormal Technologies, Inc", "url": "https://supernormal.com" },
   "homepage": "https://supernormal.com",
