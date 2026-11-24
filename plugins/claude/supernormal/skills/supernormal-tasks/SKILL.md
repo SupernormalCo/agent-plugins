@@ -54,6 +54,10 @@ Every task has two places to write:
 | Stuck on a question, an approval or missing access | `{type: "block", note}` saying exactly what you need |
 | Only your part is finished, the rest is not        | Leave it in progress                                 |
 
+To change several tasks at once (the member asks to close out a list, say), send them all in one
+`task_update` with `updates: [{task_id, command}, ...]`, up to 25, not one call per task. Each
+succeeds or fails on its own, and `results` says which.
+
 If the Room refuses a status move, it is not the member's to make: leave the status alone and
 report in the comment. A task with no assignee is taken by whoever starts or blocks it, which would
 assign it to the member: on such a task leave the status alone unless the member asked to take it.
@@ -89,8 +93,28 @@ are doing yourself in this conversation does not need a task.
 5. Pass an `idempotency_key` and reuse it if you retry, so the task is made once.
 6. Tell the member the task's title, who has it and where it is.
 
+When the member asks for several tasks at once (a list from a meeting, rows to copy onto the
+board), make them all in one `task_create` with `tasks: [...]`, up to 25, each with the fields
+above, not one call per task. Give a task already finished `status: "done"` (and `note`, what was
+done) so it needs no second call; `"in_progress"` and `"blocked"` (with `note`) work the same way.
+Each task succeeds or fails on its own: tell the member how many were made and which were refused
+and why.
+
 If the Room refuses the assignee (someone the member cannot assign to), tell the member; do not
 retry with someone else. You cannot assign a task to the Supernormal coworker from here.
+
+## Move tasks to another board
+
+Move tasks only when the member asks ("put these on the Launch room's board", "move that back to my
+list"). A move keeps each task's assignee, page, history and comments.
+
+1. `tasks_list` the board the tasks are on, and `rooms_list` for the Room they go to. The member's
+   home Room is their own board.
+2. `task_move` once with every task: `task_ids`, `room_id` for the Room that holds them (leave it
+   out for the home Room), and `to_room_id`.
+3. Each task moves or is refused on its own. Tell the member how many moved and, for each refused
+   one, why: a cancelled task or an unsent draft cannot move, a DM holds no tasks, and a task stays
+   put when its assignee is not in the target Room.
 
 ## Rules
 

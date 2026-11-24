@@ -14,13 +14,13 @@ tools; each one is short.
 
 ## Which skill to read
 
-| You are about to                                                         | Read                    | Tools it covers                                                                                                                                               |
-| ------------------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Find or read something: files, chat, comments, goals, what changed       | `supernormal-context`   | `room_read`, `room_search`, `room_chat`, `rooms_activity`, `conversation_list`, `conversation_get`, `goals_list`, `goal_get`, `room_events`, `memory_history` |
-| Write, rename or move a document                                         | `supernormal-documents` | `room_list`, `room_write`, `room_move`, `room_transfer`                                                                                                       |
-| Work with a board, issue tracker or any list with rows                   | `supernormal-databases` | every `db_` tool                                                                                                                                              |
-| Pick up, report on or create a task                                      | `supernormal-tasks`     | `tasks_list`, `task_get`, `task_create`, `task_comment`, `task_update`                                                                                        |
-| Read from or act in an app connected to a Room (mail, calendar, tracker) | `supernormal-apps`      | `room_connectors`, `connector_tools`, `connector_execute`, `connector_execute_write`                                                                          |
+| You are about to                                                         | Read                    | Tools it covers                                                                                                                                                               |
+| ------------------------------------------------------------------------ | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Find or read something: files, chat, comments, goals, what changed       | `supernormal-context`   | `room_read`, `room_search`, `room_chat`, `room_message`, `rooms_activity`, `conversation_list`, `conversation_get`, `goals_list`, `goal_get`, `room_events`, `memory_history` |
+| Write, rename or move a document                                         | `supernormal-documents` | `room_list`, `room_write`, `room_move`, `room_transfer`                                                                                                                       |
+| Work with a board, issue tracker or any list with rows                   | `supernormal-databases` | every `db_` tool                                                                                                                                                              |
+| Pick up, report on, create or move a task                                | `supernormal-tasks`     | `tasks_list`, `task_get`, `task_create`, `task_comment`, `task_update`, `task_move`                                                                                           |
+| Read from or act in an app connected to a Room (mail, calendar, tracker) | `supernormal-apps`      | `room_connectors`, `connector_tools`, `connector_execute`, `connector_execute_write`                                                                                          |
 
 Most jobs need two: `supernormal-context` to learn what the Room already holds, then the skill for
 what you change.
@@ -28,7 +28,9 @@ what you change.
 ## Find the Room
 
 1. `rooms_list` gives each Room's id, name and kind (`home` is the member's private Room). Every
-   other tool takes that `room_id`.
+   other tool takes that `room_id`. Pass `query` to find a Room by name, or `room_id` with an id or
+   a Room link the member pasted to get just that Room. A pasted chat link needs no lookup: the
+   chat tools take it as `link` (`supernormal-context`).
 2. `room_members` lists the people and agents in a Room, with user id and email.
 3. When you do not know which Room holds something, do not guess and do not read Rooms one by one:
    search across all of them (`supernormal-context`).

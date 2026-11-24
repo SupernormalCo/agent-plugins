@@ -17,6 +17,7 @@ the supernormal skill).
 | A file, when you do not know its path              | `room_search`                                           |
 | What someone said in chat                          | `room_chat` with a `query`                              |
 | The latest chat in one Room                        | `room_chat` without a query                             |
+| A chat link the member pasted                      | `room_message` or `room_chat` with `link`               |
 | A catch-up across the member's Rooms               | `rooms_activity`                                        |
 | Comments left on a document or a database row      | `conversation_list`, then `conversation_get`            |
 | What a Room is working toward                      | `goals_list`, then `goal_get`                           |
@@ -41,9 +42,28 @@ the supernormal skill).
 - A search hit is a pointer, not a source. `room_read` the file, or read the thread, before you
   quote or cite it.
 - `room_chat` without a query reads one Room's latest messages. The main chat shows each thread's
-  opening message; pass its `seq` as `thread_id` to read the replies.
+  opening message; pass its `seq` as `thread_id` to read the thread: its opening message comes back
+  as `thread`, the replies as `messages`. A thread link (`#thread-12`) names that seq.
+- To find what one person said, pass `author` (a name, an email or a user id) with the `query`. When
+  the name fits several people, the result lists them: pass the right one's user id.
+- To search a stretch of time, pass `since` and `until` with the `query`: a day (`2026-11-18`, UTC)
+  or a date-time. A day as `until` takes in that whole day.
+- Every message carries an `href`, its web link. Give it to the member when you point at a
+  message.
 - Chat results start small on purpose. Raise `limit` only when a result says `truncated` or you
   need more.
+
+## Links the member pastes
+
+A chat link names its Room and its thread or message (`…/rooms/<room>#thread-<id>`,
+`#message-<id>`), as a web link or a desktop link (`supernormal://rooms/…`). Pass it as `link` as
+it is: do not look the Room up with `rooms_list` first. A message's `href` works the same way.
+
+- `room_message` reads the one message it names: a reply comes with its thread's opening message,
+  and `around` adds what was said before and after it.
+- `room_chat` with `link` reads the whole thread; add a `query` to search inside it.
+- A link that names no Room or no message is refused, saying why. Tell the member; do not guess
+  the Room.
 
 ## Catch up
 
