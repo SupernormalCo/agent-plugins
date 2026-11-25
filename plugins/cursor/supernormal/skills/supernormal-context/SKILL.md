@@ -48,8 +48,11 @@ these tools never read or change those.
 - `room_chat` without a query reads one Room's latest messages. The main chat shows each thread's
   opening message; pass its `seq` as `thread_id` to read the thread: its opening message comes back
   as `thread`, the replies as `messages`. A thread link (`#thread-12`) names that seq.
-- To find what one person said, pass `author` (a name, an email or a user id) with the `query`. When
-  the name fits several people, the result lists them: pass the right one's user id.
+- To narrow a search to what a particular teammate said about the topic, add `author` (a name, an
+  email or a user id) to the `query`. When the name fits several people, the result lists them:
+  pass the right one's user id.
+- Results come only from Rooms the member is in, and only messages they can already see in
+  Supernormal.
 - To search a stretch of time, pass `since` and `until` with the `query`: a day (`2026-11-18`, UTC)
   or a date-time. A day as `until` takes in that whole day.
 - Every message carries an `href`, its web link. Give it to the member when you point at a

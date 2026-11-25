@@ -56,7 +56,8 @@ The plan, notes and result for an issue belong on its page (`body`), not in a se
 
 - One row: `db_create_row` with `title`, `body` for its page, and `properties` for the other
   columns.
-- Two or more: `db_create_rows` once, not `db_create_row` in a loop.
+- Two or more: show the member the rows you will add and wait for their yes, then `db_create_rows`
+  once, not `db_create_row` in a loop.
 - Before filing, `db_get` or `db_query` to check the issue is not already there.
 - The Room assigns the Issue ID. Do not set it.
 - Give the member the key and `href` of what you created.
