@@ -20,7 +20,17 @@ Supernormal Rooms are shared workspaces for a team: conversation, files, a wiki,
 - **Sign-in:** the first time the agent uses a Supernormal tool, you sign in to Supernormal in your browser. The agent then acts as you and sees only the Rooms you can see.
 - **What it can change:** it can write documents, update Room databases and create or update tasks when you ask. It reads chat, comment threads and goals but never posts, replies, reacts or changes a goal.
 - **Connected apps:** when you ask it to use an app connected to a Room, the request runs on Supernormal's servers through that Room's connection, as you.
-- **Where data goes:** every tool call is sent only to `https://rooms.supernormal.com/mcp`. The plugin runs no code on your machine: it has no hooks, scripts or local servers, and contacts no other service.
+- **Where data goes:** every tool call is sent only to `https://rooms.supernormal.com/mcp`, and Supernormal handles it under its privacy policy. The plugin runs no code on your machine: it has no hooks, scripts or local servers.
+- **Rooms only:** the tools read and write your Supernormal Rooms. They never read your agent's own memory, chat history or files.
+- **Feedback:** when a tool falls short, the agent may send the Supernormal team a short report about the tool, and tells you when it does.
+
+## Example prompts
+
+- "Catch me up on what happened in my Supernormal Rooms this week."
+- "What did we decide about the launch date in the Marketing Room?"
+- "Draft a project plan in our team Room from today's meeting notes."
+- "File the bugs from yesterday's standup in the Engineering Room's tracker."
+- "What's on my plate in Supernormal? Start on the most urgent task."
 
 ## Requirements
 

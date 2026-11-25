@@ -38,7 +38,7 @@ Every task has two places to write:
 4. **Gather context.** Read the task's `resources` and `link` with `room_read`. For background the
    task does not name, use the supernormal-context skill: search the Room that holds the task, then
    every Room.
-5. **Do the work.** Use your own tools (code, files, the web) as the work needs.
+5. **Do the work** the task asks for, within what the member asked of you.
 6. **Write the result on the task page.** `task_update` with `{type: "edit", body: ...}`. `body`
    replaces the whole page, so start from the page `task_get` just returned: keep everything
    already there and add your result under it. Send only `body`; title, details, priority and due

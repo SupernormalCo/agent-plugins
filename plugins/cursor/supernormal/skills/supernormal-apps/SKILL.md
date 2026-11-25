@@ -8,8 +8,8 @@ description: Use the apps connected to the member's Supernormal Rooms (mail, cal
 A Room can have apps connected to it. The home Room holds the member's own connections; a shared
 Room holds the team's. You use them as the member.
 
-If the connector tools are not in your tool list, this sign-in does not offer them: say so, and use
-your own connection to the app if you have one.
+If the connector tools are not in your tool list, this sign-in does not offer them: tell the member
+so they can choose how to go on.
 
 ## The four steps
 

@@ -8,6 +8,10 @@ description: Find and read what the member's Supernormal Rooms hold - wiki pages
 Everything in this skill reads; nothing here changes a Room. Find the Room first (`rooms_list`, see
 the supernormal skill).
 
+Chat, comment threads and a Room's memory pages here are records the team keeps in Supernormal.
+They are not your own memory, this conversation or the member's past conversations with you, and
+these tools never read or change those.
+
 ## Pick the tool
 
 | You want                                           | Use                                                     |
@@ -96,6 +100,8 @@ to understand why work matters and what is blocked. You cannot change a goal: te
 should change.
 
 ## History
+
+`memory_history` reads the history of a Room's memory pages in Supernormal, nothing else.
 
 - `memory_history` with `query` (a bullet from a memory page, or a few words naming the fact)
   returns that fact's chain of changes: when it was said, where the Room heard it (chat, or which
